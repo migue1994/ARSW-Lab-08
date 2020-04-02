@@ -230,7 +230,7 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
     - Tiempo: 35,17 segundos
 
 ![](images/part1/tiempos/despues/17.png)
-![](images/part1/tiempos/despues/1.png)
+![](images/part1/tiempos/despues/18.png)
 
     * 1090000
 
@@ -250,6 +250,7 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 ### Conclusiones
 
+- Teniendo en cuenta los resultados obtenidos anteriormente, se puede decir que con el escalamiento vertical al añadir potencia y memoria al procesamiento, puede que se mejoren los tiempos de respuesta del servidor; sin embargo, hay que tener en cuenta que es un sólo servidor el que está atendiendo todas las solicitudes y por tanto no le brinda beneficios a la disponibilidad de la aplicación, pues está sigue dependiendo de la disposición de los recursos de la máquina.
 
 **Preguntas**
 
