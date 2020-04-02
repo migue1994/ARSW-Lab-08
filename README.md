@@ -84,189 +84,86 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 12. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
 13. Vuelva a dejar la VM en el tamaño inicial para evitar cobros adicionales.
 
-## Documentación
-
-### Tiempos de Respuesta
-
-    * 1000000
-
-    - Tiempo: 39,46 segundos
-
-![](images/part1/tiempos/antes/1.png)
-![](images/part1/tiempos/antes/2.png)
-
-    * 1010000
-
-    - Tiempo: 74,27 segundos
-
-![](images/part1/tiempos/antes/3.png)
-![](images/part1/tiempos/antes/4.png)
-
-    * 1020000
-
-    - Tiempo: 74,43 segundos
-
-![](images/part1/tiempos/antes/5.png)
-![](images/part1/tiempos/antes/6.png)
-
-    * 1030000
-
-    - Tiempo: 96,03 segundos
-
-![](images/part1/tiempos/antes/7.png)
-![](images/part1/tiempos/antes/8.png)
-
-    * 1040000
-
-    - Tiempo: 61,21 segundos
-
-![](images/part1/tiempos/antes/9.png)
-![](images/part1/tiempos/antes/10.png)
-
-    * 1050000
-
-    - Tiempo: 62,70 segundos
-
-![](images/part1/tiempos/antes/11.png)
-![](images/part1/tiempos/antes/12.png)
-
-    * 1060000
-
-    - Tiempo: 65,24 segundos
-
-![](images/part1/tiempos/antes/13.png)
-![](images/part1/tiempos/antes/14.png)
-
-    * 1070000
-
-    - Tiempo: 35,81 segundos
-
-![](images/part1/tiempos/antes/15.png)
-![](images/part1/tiempos/antes/16.png)
-
-    * 1080000
-
-    - Tiempo: 61,48 segundos
-
-![](images/part1/tiempos/antes/17.png)
-![](images/part1/tiempos/antes/1.png)
-
-    * 1090000
-
-    - Tiempo: 63,29 segundos
-
-![](images/part1/tiempos/antes/19.png)
-![](images/part1/tiempos/antes/20.png)
-
-
-#### Consumo de CPU
-
-![](images/part1/tiempos/antes/21.png)
-
-#### Respuesta (9)
-
-![](images/part1/tiempos/antes/22.png)
-
-### Tiempos de Respuesta-Escalamiento vertical
-
-    * 1000000
-
-    - Tiempo: 29,76 segundos
-
-![](images/part1/tiempos/despues/1.png)
-![](images/part1/tiempos/despues/2.png)
-
-    * 1010000
-
-    - Tiempo: 32,57 segundos
-
-![](images/part1/tiempos/despues/3.png)
-![](images/part1/tiempos/despues/4.png)
-
-    * 1020000
-
-    - Tiempo: 31,41 segundos
-
-![](images/part1/tiempos/despues/5.png)
-![](images/part1/tiempos/despues/6.png)
-
-    * 1030000
-
-    - Tiempo: 32,19 segundos
-
-![](images/part1/tiempos/despues/7.png)
-![](images/part1/tiempos/despues/8.png)
-
-    * 1040000
-
-    - Tiempo: 32,23 segundos
-
-![](images/part1/tiempos/despues/9.png)
-![](images/part1/tiempos/despues/10.png)
-
-    * 1050000
-
-    - Tiempo: 32,80 segundos
-
-![](images/part1/tiempos/despues/11.png)
-![](images/part1/tiempos/despues/12.png)
-
-    * 1060000
-
-    - Tiempo: 33,47 segundos
-
-![](images/part1/tiempos/despues/13.png)
-![](images/part1/tiempos/despues/14.png)
-
-    * 1070000
-
-    - Tiempo: 34,26 segundos
-
-![](images/part1/tiempos/despues/15.png)
-![](images/part1/tiempos/despues/16.png)
-
-    * 1080000
-
-    - Tiempo: 35,17 segundos
-
-![](images/part1/tiempos/despues/17.png)
-![](images/part1/tiempos/despues/18.png)
-
-    * 1090000
-
-    - Tiempo: 38,31 segundos
-
-![](images/part1/tiempos/despues/19.png)
-![](images/part1/tiempos/despues/20.png)
-
-
-#### Consumo de CPU
-
-![](images/part1/tiempos/despues/21.png)
-
-#### Respuesta (9)
-
-![](images/part1/tiempos/despues/22.png)
-
-### Conclusiones
-
-- Teniendo en cuenta los resultados obtenidos anteriormente, se puede decir que con el escalamiento vertical al añadir potencia y memoria al procesamiento, puede que se mejoren los tiempos de respuesta del servidor; sin embargo, hay que tener en cuenta que es un sólo servidor el que está atendiendo todas las solicitudes y por tanto no le brinda beneficios a la disponibilidad de la aplicación, pues está sigue dependiendo de la disposición de los recursos de la máquina.
-
 **Preguntas**
 
 1. ¿Cuántos y cuáles recursos crea Azure junto con la VM?
+
+    Las máquinas virtuales de Azure, nos ofrecen los siguientes recursos:
+
+    * Grupo de recursos.
+    * Opciones de disponibilidad.
+    * Tipo de sistema operativo
+    * Tamaño
+        - vCPU
+        - RAM (GiB)
+        - Disco de datos
+    * Redes
+        - Red virtual
+        - Subred
+        - Ip pública
+
 2. ¿Brevemente describa para qué sirve cada recurso?
-3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
+
+    * Grupo de recursos: Permite controlar la cantidad de recursos que requiere la VM según la necesidad del usuario.
+    * Opciones de disponibilidad: Administra la disponibilidad y resistencia hacia las aplicaciones.
+    * Tipo de sistema operativo: Permite elejir el tipos de sistema operativo, según su versión y características.
+    * Tamaño
+        - vCPU: cantidad de cores que podrá usar la VM, esto tiene inpacto en el rendimiento de procesamiento a la hora de realizar las tareas.
+        - RAM (Gib): Capacidad de memoria RAM en Gib que tendrá la VM, este recurso afectará el rendimiento multi tarea de la esta.
+    * Redes
+        - Red Virtual: Permite controlar el intervalo de redes que tendrá el sistema 
+        - Subred: Configuración adicional dentro de la red virtual, con el fin de particionar la red o administrar la red, dependiendo de la necesidad del usuario.
+        - Ip pública: Dirección ip, necesaria para poder administrar la VM de manera remota y poder usar los servcios que se han realizado dentro de esta.
+    
+3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando npm FibonacciApp.js? ¿Por qué debemos crear un Inbound port rule antes de acceder al servicio?
+    
+    - Si solo se ejecuta el comando ``npm FibonacciApp`` la aplicación se caerá una vez que hayamos cerrado la conexión debido al algún fallo en la propia VM o porque que simplemente se ha suspendido, para evitar esto, hacemos uso de la herramienta forever, que permite reiniciar la aplicación después de cualquier fallo en esta.
+
+    - Se debe crear una regla inbound, con el fin de permitir a cualquier cliente ingresar al servicio desplegado en alguno de los puertos, en este caso la aplicación funciona en el puerto 3000, por lo tanto este puerto se debe abrir para que sea visible a cualquier usuario.
+
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
+
+    ![](images/part1/preguntas/1.PNG)
+
+    El alto consumo de tiempo de respuesta, puede deberse a que aactualmente estamos trabajando con una máquina virtual que posee unas características de gama baja, es decir, posee un hardware insuficiente que no le permite realizar tareas complejar como calcular la serie de Fibonacci para un número grande.
+
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
+
+    ![](images/part1/preguntas/2.PNG)
+
+    La función consume esa cantidad de cpu, porque debe almacenar números en cada iteración del ciclo for, estos numeros van aumentando en tamaño a una tasa de incremento constante, lo cual implica que la cpu debe invertir más recursos a medida que va aumentando de tamaño el número.
+
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
-    * Tiempos de ejecución de cada petición.
-    * Si hubo fallos documentelos y explique.
-7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
+
+    ![](images/part1/preguntas/3.PNG)
+
+    - Tiempos de ejecución de cada petición.
+    
+7. ¿Cuál es la diferencia entre los tamaños B2ms y B1ls (no solo busque especificaciones de infraestructura)?
+
+    B1ls es la máquina más basica que tien azure, la cual solo cuenta con 1 vcpu y 0.5 Gb de memoria RAM, por otro lado B2ms, posee mayor capacidad, contando con 2vcpu y 8 Gb de menoria RAM, que le permite manejar de una manera más adecuada los recursos, con la capacidad de usar una mayor cantidad de entradas y obtener una mejor disponibilidad en comparación a la B1ls.
+
 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
+
+    Aumentar la capacidad de la máquina, nos permite disminuir el tiempo que toma calcular un número n en la serie de Fibonacci, por lo tanto el tiempo de respuesta será menor en la medida en que el hardware sea mejor, sin embargo, esto no garantiza que las peticiones siempre sean exitosas, lo cual requerirá otro tipo de soluciones.
+
 9. ¿Qué pasa con la infraestructura cuando cambia el tamaño de la VM? ¿Qué efectos negativos implica?
+
+    No se genera un efecto negativo en el objetivo de la práctica, pues se hizo con el fín de mejorar el rendimiento del sistema a la hora de calcular la serie de fibonacci para un número aleatorio.
+
+    Por otro lado, el escalamiento genera un costo adicional que es proporcional al tamaño que va aumentando la VM.
+
 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
-11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
+
+    ![](images/part1/preguntas/4.PNG)
+
+    En la tabla anterior, se evidencia que el tiempo de ejecución se reduce en promedio un 30.18%, lo cual es una cifra bastante significativa en tiempo de computación, por lo tanto se puede decir que con el escalamiento vertical al añadir potencia y memoria al procesamiento, puede que se mejoren los tiempos de respuesta del servidor; sin embargo, hay que tener en cuenta que es un sólo servidor el que está atendiendo todas las solicitudes y por tanto no le brinda beneficios a la disponibilidad de la aplicación, pues está sigue dependiendo de la disposición de los recursos de la máquina.
+
+11. Aumente la cantidad de ejecuciones paralelas del comando de postman a 4. ¿El comportamiento del sistema es porcentualmente mejor?
+
+![](images/part1/preguntas/5.PNG)
+
+![](images/part1/preguntas/6.PNG)
 
 ### Parte 2 - Escalabilidad horizontal
 
