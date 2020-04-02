@@ -288,19 +288,19 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
 
-    ![](images/part1/preguntas/1.PNG)
+    ![](https://github.com/migue1994/ARSW-Lab-08/blob/master/images/part1/Preguntas/1.PNG)
 
     El alto consumo de tiempo de respuesta, puede deberse a que aactualmente estamos trabajando con una máquina virtual que posee unas características de gama baja, es decir, posee un hardware insuficiente que no le permite realizar tareas complejar como calcular la serie de Fibonacci para un número grande.
 
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
 
-    ![](images/part1/preguntas/2.PNG)
+    ![](https://github.com/migue1994/ARSW-Lab-08/blob/master/images/part1/Preguntas/2.PNG)
 
     La función consume esa cantidad de cpu, porque debe almacenar números en cada iteración del ciclo for, estos numeros van aumentando en tamaño a una tasa de incremento constante, lo cual implica que la cpu debe invertir más recursos a medida que va aumentando de tamaño el número.
 
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
 
-    ![](images/part1/preguntas/3.PNG)
+    ![](https://github.com/migue1994/ARSW-Lab-08/blob/master/images/part1/Preguntas/3.PNG)
 
     - Tiempos de ejecución de cada petición.
     
@@ -320,15 +320,15 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
 
-    ![](images/part1/preguntas/4.PNG)
+    ![](https://github.com/migue1994/ARSW-Lab-08/blob/master/images/part1/Preguntas/4.PNG)
 
     En la tabla anterior, se evidencia que el tiempo de ejecución se reduce en promedio un 30.18%, lo cual es una cifra bastante significativa en tiempo de computación, por lo tanto se puede decir que con el escalamiento vertical al añadir potencia y memoria al procesamiento, puede que se mejoren los tiempos de respuesta del servidor; sin embargo, hay que tener en cuenta que es un sólo servidor el que está atendiendo todas las solicitudes y por tanto no le brinda beneficios a la disponibilidad de la aplicación, pues está sigue dependiendo de la disposición de los recursos de la máquina.
 
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a 4. ¿El comportamiento del sistema es porcentualmente mejor?
 
-![](images/part1/preguntas/5.PNG)
+![](https://github.com/migue1994/ARSW-Lab-08/blob/master/images/part1/Preguntas/5.PNG)
 
-![](images/part1/preguntas/6.PNG)
+![](https://github.com/migue1994/ARSW-Lab-08/blob/master/images/part1/Preguntas/6.PNG)
 
 ### Parte 2 - Escalabilidad horizontal
 
