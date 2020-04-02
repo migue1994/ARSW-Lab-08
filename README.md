@@ -84,6 +84,171 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 12. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
 13. Vuelva a dejar la VM en el tamaño inicial para evitar cobros adicionales.
 
+## Documentación
+
+### Tiempos de Respuesta
+
+    * 1000000
+
+    - Tiempo: 39,46 segundos
+
+![](images/part1/tiempos/antes/1.png)
+![](images/part1/tiempos/antes/2.png)
+
+    * 1010000
+
+    - Tiempo: 74,27 segundos
+
+![](images/part1/tiempos/antes/3.png)
+![](images/part1/tiempos/antes/4.png)
+
+    * 1020000
+
+    - Tiempo: 74,43 segundos
+
+![](images/part1/tiempos/antes/5.png)
+![](images/part1/tiempos/antes/6.png)
+
+    * 1030000
+
+    - Tiempo: 96,03 segundos
+
+![](images/part1/tiempos/antes/7.png)
+![](images/part1/tiempos/antes/8.png)
+
+    * 1040000
+
+    - Tiempo: 61,21 segundos
+
+![](images/part1/tiempos/antes/9.png)
+![](images/part1/tiempos/antes/10.png)
+
+    * 1050000
+
+    - Tiempo: 62,70 segundos
+
+![](images/part1/tiempos/antes/11.png)
+![](images/part1/tiempos/antes/12.png)
+
+    * 1060000
+
+    - Tiempo: 65,24 segundos
+
+![](images/part1/tiempos/antes/13.png)
+![](images/part1/tiempos/antes/14.png)
+
+    * 1070000
+
+    - Tiempo: 35,81 segundos
+
+![](images/part1/tiempos/antes/15.png)
+![](images/part1/tiempos/antes/16.png)
+
+    * 1080000
+
+    - Tiempo: 61,48 segundos
+
+![](images/part1/tiempos/antes/17.png)
+![](images/part1/tiempos/antes/1.png)
+
+    * 1090000
+
+    - Tiempo: 63,29 segundos
+
+![](images/part1/tiempos/antes/19.png)
+![](images/part1/tiempos/antes/20.png)
+
+
+#### Consumo de CPU
+
+![](images/part1/tiempos/antes/21.png)
+
+#### Respuesta (9)
+
+![](images/part1/tiempos/antes/22.png)
+
+### Tiempos de Respuesta-Escalamiento vertical
+
+    * 1000000
+
+    - Tiempo: 29,76 segundos
+
+![](images/part1/tiempos/despues/1.png)
+![](images/part1/tiempos/despues/2.png)
+
+    * 1010000
+
+    - Tiempo: 32,57 segundos
+
+![](images/part1/tiempos/despues/3.png)
+![](images/part1/tiempos/despues/4.png)
+
+    * 1020000
+
+    - Tiempo: 31,41 segundos
+
+![](images/part1/tiempos/despues/5.png)
+![](images/part1/tiempos/despues/6.png)
+
+    * 1030000
+
+    - Tiempo: 32,19 segundos
+
+![](images/part1/tiempos/despues/7.png)
+![](images/part1/tiempos/despues/8.png)
+
+    * 1040000
+
+    - Tiempo: 32,23 segundos
+
+![](images/part1/tiempos/despues/9.png)
+![](images/part1/tiempos/despues/10.png)
+
+    * 1050000
+
+    - Tiempo: 32,80 segundos
+
+![](images/part1/tiempos/despues/11.png)
+![](images/part1/tiempos/despues/12.png)
+
+    * 1060000
+
+    - Tiempo: 33,47 segundos
+
+![](images/part1/tiempos/despues/13.png)
+![](images/part1/tiempos/despues/14.png)
+
+    * 1070000
+
+    - Tiempo: 34,26 segundos
+
+![](images/part1/tiempos/despues/15.png)
+![](images/part1/tiempos/despues/16.png)
+
+    * 1080000
+
+    - Tiempo: 35,17 segundos
+
+![](images/part1/tiempos/despues/17.png)
+![](images/part1/tiempos/despues/18.png)
+
+    * 1090000
+
+    - Tiempo: 38,31 segundos
+
+![](images/part1/tiempos/despues/19.png)
+![](images/part1/tiempos/despues/20.png)
+
+
+#### Consumo de CPU
+
+![](images/part1/tiempos/despues/21.png)
+
+#### Respuesta (9)
+
+![](images/part1/tiempos/despues/22.png)
+
+
 **Preguntas**
 
 1. ¿Cuántos y cuáles recursos crea Azure junto con la VM?
