@@ -49,6 +49,7 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 ![](images/part1/part1-vm-3000InboudRule.png)
 
 7. La función que calcula en enésimo número de la secuencia de Fibonacci está muy mal construido y consume bastante CPU para obtener la respuesta. Usando la consola del Browser documente los tiempos de respuesta para dicho endpoint usando los siguintes valores:
+
     * 1000000
     * 1010000
     * 1020000
@@ -58,7 +59,7 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
     * 1060000
     * 1070000
     * 1080000
-    * 1090000    
+    * 1090000
 
 8. Dírijase ahora a Azure y verifique el consumo de CPU para la VM. (Los resultados pueden tardar 5 minutos en aparecer).
 
@@ -82,6 +83,171 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 11. Una vez el cambio se vea reflejado, repita el paso 7, 8 y 9.
 12. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
 13. Vuelva a dejar la VM en el tamaño inicial para evitar cobros adicionales.
+
+## Documentación
+
+### Tiempos de Respuesta
+
+    * 1000000
+
+![](images/part1/tiempos/antes/1.png)
+![](images/part1/tiempos/antes/2.png)
+
+    - Tiempo: 39,46 segundos
+
+    * 1010000
+
+![](images/part1/tiempos/antes/3.png)
+![](images/part1/tiempos/antes/4.png)
+
+    - Tiempo: 74,27 segundos
+
+    * 1020000
+
+![](images/part1/tiempos/antes/5.png)
+![](images/part1/tiempos/antes/6.png)
+
+    - Tiempo: 74,43 segundos
+
+    * 1030000
+
+![](images/part1/tiempos/antes/7.png)
+![](images/part1/tiempos/antes/8.png)
+
+    - Tiempo: 96,03 segundos
+
+    * 1040000
+
+![](images/part1/tiempos/antes/9.png)
+![](images/part1/tiempos/antes/10.png)
+
+    - Tiempo: 61,21 segundos
+
+    * 1050000
+
+![](images/part1/tiempos/antes/11.png)
+![](images/part1/tiempos/antes/12.png)
+
+    - Tiempo: 62,70 segundos
+
+    * 1060000
+
+![](images/part1/tiempos/antes/13.png)
+![](images/part1/tiempos/antes/14.png)
+
+    - Tiempo: 65,24 segundos
+
+    * 1070000
+
+![](images/part1/tiempos/antes/15.png)
+![](images/part1/tiempos/antes/16.png)
+
+    - Tiempo: 35,81 segundos
+
+    * 1080000
+
+![](images/part1/tiempos/antes/17.png)
+![](images/part1/tiempos/antes/1.png)
+
+    - Tiempo: 61,48 segundos
+
+    * 1090000
+
+![](images/part1/tiempos/antes/19.png)
+![](images/part1/tiempos/antes/20.png)
+
+    - Tiempo: 63,29 segundos
+
+#### Consumo de CPU
+
+![](images/part1/tiempos/antes/21.png)
+
+#### Respuesta (9)
+
+![](images/part1/tiempos/antes/22.png)
+
+### Tiempos de Respuesta-Escalamiento vertical
+
+    * 1000000
+
+![](images/part1/tiempos/despues/1.png)
+![](images/part1/tiempos/despues/2.png)
+
+    - Tiempo: 29,76 segundos
+
+    * 1010000
+
+![](images/part1/tiempos/despues/3.png)
+![](images/part1/tiempos/despues/4.png)
+
+    - Tiempo: 32,57 segundos
+
+    * 1020000
+
+![](images/part1/tiempos/despues/5.png)
+![](images/part1/tiempos/despues/6.png)
+
+    - Tiempo: 31,41 segundos
+
+    * 1030000
+
+![](images/part1/tiempos/despues/7.png)
+![](images/part1/tiempos/despues/8.png)
+
+    - Tiempo: 32,19 segundos
+
+    * 1040000
+
+![](images/part1/tiempos/despues/9.png)
+![](images/part1/tiempos/despues/10.png)
+
+    - Tiempo: 32,23 segundos
+
+    * 1050000
+
+![](images/part1/tiempos/despues/11.png)
+![](images/part1/tiempos/despues/12.png)
+
+    - Tiempo: 32,80 segundos
+
+    * 1060000
+
+![](images/part1/tiempos/despues/13.png)
+![](images/part1/tiempos/despues/14.png)
+
+    - Tiempo: 33,47 segundos
+
+    * 1070000
+
+![](images/part1/tiempos/despues/15.png)
+![](images/part1/tiempos/despues/16.png)
+
+    - Tiempo: 34,26 segundos
+
+    * 1080000
+
+![](images/part1/tiempos/despues/17.png)
+![](images/part1/tiempos/despues/1.png)
+
+    - Tiempo: 35,17 segundos
+
+    * 1090000
+
+![](images/part1/tiempos/despues/19.png)
+![](images/part1/tiempos/despues/20.png)
+
+    - Tiempo: 38,31 segundos
+
+#### Consumo de CPU
+
+![](images/part1/tiempos/despues/21.png)
+
+#### Respuesta (9)
+
+![](images/part1/tiempos/despues/22.png)
+
+### Conclusiones
+
 
 **Preguntas**
 
