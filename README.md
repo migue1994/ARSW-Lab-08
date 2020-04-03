@@ -149,7 +149,7 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
     - Tiempo: 61,48 segundos
 
 ![](images/part1/tiempos/antes/17.png)
-![](images/part1/tiempos/antes/1.png)
+![](images/part1/tiempos/antes/18.png)
 
     * 1090000
 
