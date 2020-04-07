@@ -414,6 +414,132 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10
 ```
 
+## Documentación
+
+### Tiempos de Respuesta
+
+#### Timpos obtenidos realizando las pruebas con newman en cada máquina
+
+    * VM1-r1
+
+    - Tiempo: 2 minutos 27.8 segundos
+
+![](images/part2/tiempos/vm1a_1.png)
+
+    * VM1-r2
+
+    - Tiempo: 2 minutos 28.6 segundos
+
+![](images/part2/tiempos/vm1a_2.png)
+
+    * VM2-r1
+
+    - Tiempo: 2 minutos 28.4 segundos
+
+![](images/part2/tiempos/vm2a_1.png)
+
+    * VM2-r2
+
+    - Tiempo: 2 minutos 23.6 segundos
+
+![](images/part2/tiempos/vm2a_2.png)
+
+    * VM3-r1
+
+    - Tiempo: 2 minutos 23.1 segundos
+
+![](images/part2/tiempos/vm3a_1.png)
+
+    * VM3-r2
+
+    - Tiempo: 2 minutos 27.8 segundos
+
+![](images/part2/tiempos/vm3a_2.png)
+
+#### Timpos obtenidos realizando las pruebas con newman en cada máquina al tiempo
+
+    * VM1-r1
+
+    - Tiempo: 3 minutos 21.5 segundos
+
+![](images/part2/tiempos/vm1_1.png)
+
+    * VM1-r2
+
+    - Tiempo: 3 minutos 21.5 segundos
+
+![](images/part2/tiempos/vm1_2.png)
+
+    * VM2-r1
+
+    - Tiempo: 3 minutos 15.9 segundos
+
+![](images/part2/tiempos/vm2_1.png)
+
+    * VM2-r2
+
+    - Tiempo: 3 minutos 19.3 segundos
+
+![](images/part2/tiempos/vm2_2.png)
+
+    * VM3-r1
+
+    - Tiempo: 2 minutos 43.7 segundos
+
+![](images/part2/tiempos/vm3_1.png)
+
+    * VM3-r2
+
+    - Tiempo: 3 minutos 44.7 segundos
+
+![](images/part2/tiempos/vm3_2.png)
+
+
+#### Resultados VM4
+
+    * VM4-r1
+
+    - Tiempo: 3 minutos 21.5 segundos
+
+![](images/part2/tiempos/vm4_1.png)
+
+    * VM4-r2
+
+    - Tiempo: 3 minutos 21.5 segundos
+
+![](images/part2/tiempos/vm4_2.png)
+
+    * VM4-r3
+
+    - Tiempo: 3 minutos 15.9 segundos
+
+![](images/part2/tiempos/vm4_3.png)
+
+    * VM4-r4
+
+    - Tiempo: 3 minutos 19.3 segundos
+
+![](images/part2/tiempos/vm4_4.png)
+
+
+#### Comportamiento de CPU
+
+    * VM1
+
+![](images/part2/tiempos/vm1_cpu.png)
+
+    * VM2
+
+![](images/part2/tiempos/vm2_cpu.png)
+
+    * VM3
+
+![](images/part2/tiempos/vm3_cpu.png)
+
+    * VM4
+
+![](images/part2/tiempos/vm4_cpu.png)
+
 **Preguntas**
 
 * ¿Cuáles son los tipos de balanceadores de carga en Azure y en qué se diferencian?, ¿Qué es SKU, qué tipos hay y en qué se diferencian?, ¿Por qué el balanceador de carga necesita una IP pública?
