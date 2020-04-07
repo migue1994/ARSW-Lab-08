@@ -499,25 +499,25 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 
     * VM4-r1
 
-    - Tiempo: 3 minutos 21.5 segundos
+    - Tiempo: 2 minutos 42.8 segundos
 
 ![](images/part2/tiempos/vm4_1.png)
 
     * VM4-r2
 
-    - Tiempo: 3 minutos 21.5 segundos
+    - Tiempo: 2 minutos 53.1 segundos
 
 ![](images/part2/tiempos/vm4_2.png)
 
     * VM4-r3
 
-    - Tiempo: 3 minutos 15.9 segundos
+    - Tiempo: 2 minutos 57.6 segundos
 
 ![](images/part2/tiempos/vm4_3.png)
 
     * VM4-r4
 
-    - Tiempo: 3 minutos 19.3 segundos
+    - Tiempo: 3 minutos 0.1 segundos
 
 ![](images/part2/tiempos/vm4_4.png)
 
