@@ -495,7 +495,24 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 ![](images/part2/tiempos/vm3_2.png)
 
 
-#### Resultados VM4
+### Peticiones Exitosas
+
+#### Resultados exitosos realizando las pruebas con newman en cada máquina
+
+![](images/part2/tiempos/E1.png)
+
+#### Resultados exitosos realizando las pruebas con newman en cada máquina al tiempo
+
+![](images/part2/tiempos/E2.png)
+
+- En el escalamiento vertical no se obtuvo ninguna respuesta exitosa
+
+### Costos
+
+![](images/part2/tiempos/costo.png)
+
+
+### Resultados VM4
 
     * VM4-r1
 
@@ -539,6 +556,8 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
     * VM4
 
 ![](images/part2/tiempos/vm4_cpu.png)
+
+- La tasa de éxito aumentó con el estilo de escalabilidad horizontal, ya que además de aumentar el número de servidores que atienden las peticiones, también se creó un balanceador de carga para controlar el tráfico en la aplicación; de modo que estas solicitudes se reparten entre estas máquinas equilibradamente y se aumenta así el número de usuarios/clientes concurrentes que pueden ser atendidos.
 
 **Preguntas**
 
