@@ -509,7 +509,7 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 
 ### Costos
 
-![](images/part2/tiempos/costo.png)
+![](images/part2/tiempos/costos.png)
 
 
 ### Resultados VM4
