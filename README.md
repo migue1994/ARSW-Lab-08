@@ -330,6 +330,8 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 ![](https://github.com/migue1994/ARSW-Lab-08/blob/master/images/part1/Preguntas/6.PNG)
 
+Como se puede observar en la simagen de resumen anterior, no están funcionando correctamente las peticiones que se le están realizando al sistema, esto puede deberse a que las máquinas que estaban designadas para realizar este laboratorio, no estaban disponubles en microsoft azure y se debió ustilizar itro tipo de máquina.
+
 ### Parte 2 - Escalabilidad horizontal
 
 #### Crear el Balanceador de Carga
@@ -562,15 +564,89 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 **Preguntas**
 
 * ¿Cuáles son los tipos de balanceadores de carga en Azure y en qué se diferencian?, ¿Qué es SKU, qué tipos hay y en qué se diferencian?, ¿Por qué el balanceador de carga necesita una IP pública?
+
+    - Actualmente existen dos tipos de balanceo de cargas, por un lado tenemos el balanceo de carga público, el cual se encarga de proveer conexiones de salida para las maquinas virtuales que conforman el backend, esto es posible mediante la traducción de direcciones IP privadas a públicas, y por otro lado tenemos el balanceador de cargas interno o privado, el cual se encarga de balacear las cargas dentro de la red interna de nuestra red virtual.
+
+    - SKU en microsoft azure, son los niveles de recursos que están disponibles para los clientes dependiendo de la tarea que se va a realizar, estos se clasifican en cuatro categorias las cuales son: Free, Basic, Standard y Storage Optimized. Cada una de ellas, determina el monto que el cliente debe pagar a la hora de usar el servicio.
+
+    Cada categoría brinda un nivel de capacidad diferente y se eligen dependiendo del tamaño del proyecto que se quiere desplegar.
+
+    - El balanceador de carga requiere una ip pública, porque es ahí donde llegan todas las peticiones que se realizan, de ahí se distribuye a las demás máquinas para que realicen en cálculo y así retornar la respuesta.
+
 * ¿Cuál es el propósito del *Backend Pool*?
+
+    - Es una agrupación lógica de sus instancias de aplicaciones en todo el mundo que reciben el mismo tráfico y responden con el comportamiento esperado
+
+    Un backend pool define cómo se deben evaluar los diferentes backends a través de sondas de estado. También define cómo se produce el equilibrio de carga entre ellos.
+
 * ¿Cuál es el propósito del *Health Probe*?
-* ¿Cuál es el propósito de la *Load Balancing Rule*? ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar la escalabilidad del sistema?.
+
+    El Health Probe, se encarga de determinar el estado de cada una de las máquinas que conforman el backend pool mediante peticiones de prueba, esto con el fin de ajustar el balanceo de carga entre las diferentes instancias.
+
+* ¿Cuál es el propósito de la *Load Balancing Rule*? ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar 
+la escalabilidad del sistema?.
+
+    El propósito de la Load balancing rule es definir como se distribuye el tráfico a las máquinas virtuales con el fín de definir el puerto por la cual a escuchar al front end, esto es importante, ya que el frontend puede enviar trafico de red a las máquinas virtuales que están en el backend con balanceo de carga y evitar errores en las respuestas a las peticiones.
+
 * ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*?
+
+    - Una Virtual Network es una representación de una red propia en la nube. Es un aislamiento lógico de la nube de Azure dedicada a la suscripción del usuario. Puede utilizar VNets para aprovisionar y gestionar redes virtuales privadas (VPNs) en Azure y, opcionalmente, enlazar las VNets con otras VNets en Azure, o con una infraestructura de TI local.
+
+    - Una Subnet es un rango de direcciones lógicas. Es una buena estrategia si se tiene una red de gran tamaño ya que al dividirla en subredes puede reducir el tamaño de dominios de broadcast y hacerla más fácil de administrar.
+
+    - Address space: al crear una red virtual, debe especificar un espacio de direcciones IP privadas personalizadas utilizando direcciones públicas y privadas (RFC 1918). Azure asigna recursos en una red virtual a una dirección IP privada desde el espacio de direcciones que asigne. Por ejemplo, si implementa una VM en una red virtual con espacio de direcciones, 10.0.0.0/16, a la VM se le asignará una IP privada como 10.0.0.4.
+
+    - Address range es el rango de direcciones ip disponibles para poder configurar la red virtual, por defecto azure asigna una mascara de red de /28 o /16 y se puede realizar subredes con diferentes rangos, dentro del rango maximo
+
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
+
+    - Availability Zone es una oferta que se realiza para tener alta disponibilidad ya que potege sus aplicaciones y datos a fallas que puedan ocurrir. las zonas de disponibilidad son ubicaicones ficticias dentro de una region en azure.
+
 * ¿Cuál es el propósito del *Network Security Group*?
+
+    La Network Security Group se ecarga de restringir el tráfico que llega a las máquinas virtuales, esto con el fin de fortalecer el nivel de seguridad y regular las peticiones que llegan al sistema
+
 * Informe de newman 1 (Punto 2)
+
+    Una vez que garanticemos que las máquinas virtuales están corriendo, realizaremos la prueba usando newman sobre las peticiones que ya se habían realizado antes en la parte 1 del laboratorio.
+
+    En la siguiente imagen, podremos ver los resultados obtenidos, cuando realizamos 4 peticiones paralelas a la ip publica del equilibrador de cargas.
+
+    ![](images/part2/preguntas/1.png)
+
+    Como podemos ver, el sistema se demoró en responder las peticiones 5 min y 38 seg, de las cuales, solo 2 presentaron fallas.
+
+    Procederemos a crear la siguiente m´quina virtual, y se la agregaremos al sistema actual que posee las máquinas que ya habíamos implementado anteriormente.
+
+    Realizando la misma prueba con newman, obtenemos los siguientes resultados:
+
+    ![](images/part2/preguntas/2.png)
+
+    Como podemos ver, a diferencia de los resultados anteriores realizados con solo 3 máquinas virtuales, aquí vemos que la cantidad de tiempo de respuesta fue menor, y además la cantidad de peticiones que fallaron fue de 0, por lo tanto, se puede concluir que a mayor cantidad de máquinas trabajando en paralelo dentro de un cluster, mayor efectividad y eficacia vamos a obtener de los procesos que se esán realizando.
+
+    El rendimiento de cada VM se muestra a continuación:
+
+    - VM1
+
+        ![](images/part2/preguntas/4.png)
+
+    - VM2
+
+        ![](images/part2/preguntas/5.png)
+
+    - VM3
+
+        ![](images/part2/preguntas/6.png)
+
+    - VM4
+
+        ![](images/part2/preguntas/7.png)
+
+    Como pudimos ver en las imagenes anteriores, el rendimiento en cada máquina fue similar, exeptuando la última máquina, esto significa que el en efecto el equilibrador de carga está funcionando correctamente.
+
 * Presente el Diagrama de Despliegue de la solución.
 
+    ![](images/part2/preguntas/3.png)
 
 
 
