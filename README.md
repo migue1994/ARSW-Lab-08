@@ -612,7 +612,7 @@ la escalabilidad del sistema?.
 
     En la siguiente tabla verá el resumen de los resultados obtenidos en el sistema con tan solo 3 máquinas
 
-    ![](images/part2/preguntas/8.png)
+    ![](images/part2/preguntas/t.png)
 
     En las siguientes imagenes, podremos ver los resultados obtenidos, cuando realizamos 4 peticiones paralelas a la ip publica del equilibrador de cargas.
 
