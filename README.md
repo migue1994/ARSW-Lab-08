@@ -620,7 +620,7 @@ la escalabilidad del sistema?.
 
     ![](images/part2/preguntas/12.png)
 
-    ![](images/part2/preguntas/13.png)
+    ![](images/part2/preguntas/b.png)
 
     ![](images/part2/preguntas/14.png)
 
@@ -634,7 +634,7 @@ la escalabilidad del sistema?.
 
     - VM2
 
-        ![](images/part2/preguntas/5.png)
+        ![](images/part2/preguntas/a.png)
 
     - VM3
 
