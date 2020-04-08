@@ -610,19 +610,21 @@ la escalabilidad del sistema?.
 
     Una vez que garanticemos que las máquinas virtuales están corriendo, realizaremos la prueba usando newman sobre las peticiones que ya se habían realizado antes en la parte 1 del laboratorio.
 
-    En la siguiente imagen, podremos ver los resultados obtenidos, cuando realizamos 4 peticiones paralelas a la ip publica del equilibrador de cargas.
+    En la siguiente tabla verá el resumen de los resultados obtenidos en el sistema con tan solo 3 máquinas
 
-    ![](images/part2/preguntas/1.png)
+    ![](images/part2/preguntas/8.png)
 
-    Como podemos ver, el sistema se demoró en responder las peticiones 5 min y 38 seg, de las cuales, solo 2 presentaron fallas.
+    En las siguientes imagenes, podremos ver los resultados obtenidos, cuando realizamos 4 peticiones paralelas a la ip publica del equilibrador de cargas.
 
-    Procederemos a crear la siguiente m´quina virtual, y se la agregaremos al sistema actual que posee las máquinas que ya habíamos implementado anteriormente.
+    ![](images/part2/preguntas/11.png)
 
-    Realizando la misma prueba con newman, obtenemos los siguientes resultados:
+    ![](images/part2/preguntas/12.png)
 
-    ![](images/part2/preguntas/2.png)
+    ![](images/part2/preguntas/13.png)
 
-    Como podemos ver, a diferencia de los resultados anteriores realizados con solo 3 máquinas virtuales, aquí vemos que la cantidad de tiempo de respuesta fue menor, y además la cantidad de peticiones que fallaron fue de 0, por lo tanto, se puede concluir que a mayor cantidad de máquinas trabajando en paralelo dentro de un cluster, mayor efectividad y eficacia vamos a obtener de los procesos que se esán realizando.
+    ![](images/part2/preguntas/14.png)
+
+    Como podemos ver, el sistema se demoró en responder las peticiones en promedio 2 min 53 seg, de las cuales, solo se presentaban entre 1 y 3 fallas. En comparación con el sistema de 3 máquinas, este se demoró menos tiempo en retornar los resultados al cliente.
 
     El rendimiento de cada VM se muestra a continuación:
 
